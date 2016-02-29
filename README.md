@@ -8,6 +8,10 @@
 $('#my-plebe-world').plebe();
 ```
 
+## Demo 
+
+Checkout an example here (http://scarabin-emmanuel.fr/plebe_js/demo/)
+
 Simply insert some image files into you plebe-world div. You can pass parameters to your world.
 
 ``` html
