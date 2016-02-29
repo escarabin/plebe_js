@@ -1,0 +1,65 @@
+body {
+    font-family: Helvetica;
+    margin: 0;
+    background: linear-gradient(270deg, #f7cac9, #91a8d0);
+    background-size: 200% 200%;
+    -webkit-animation: bg_moving 20s ease infinite;
+}
+
+@-webkit-keyframes bg_moving {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes bg_moving {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes bg_moving {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#demo-settings-container {
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    background: white;
+    z-index: 1000;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px;
+    opacity: 0.3;
+}
+
+#demo-settings-container:hover {
+    opacity: 1;
+}
+
+#demo-settings-container .setting-label {
+    text-align: center;
+    width: 70%;
+    float: left;
+    padding-top: 7px;
+    margin-bottom: 15px;
+}
+
+#demo-settings-container .setting-input {
+    width: 30%;
+    float: left;
+}
+
+#demo-settings-container .setting-input input {
+    width: 100%;
+    height: 30px;
+}
+
+#demo-settings-container #generate-btn {
+    float: right;
+}
+
+.plb-particle {
+    /* border: 1px solid white; */
+}

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script src="../src/lib/jquery-1.12.1.min.js"></script>
+        <script src="../src/plebe.js"></script>
+        <link rel="stylesheet" type="text/css" href="../src/plebe.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <div class="plb-world"
+             id="demo-plebe-world"
+             data-layers-amount="7"
+             data-width="100%"
+             data-height="100%"
+             data-particles-per-layer="4"
+             data-max-blur-intensity="0"
+             data-opacity-variation="0.9"
+             data-size-variation="0.4"
+             data-rotation-variation="360"
+             data-animated-particles="true"
+             data-follow-mouse="true">
+            <div class="plb-particle">
+                <img src="img/circle.svg"/>
+            </div>
+            <div class="plb-particle">
+                <img src="img/polygon.svg"/>
+            </div>
+            <div class="plb-particle">
+                <img src="img/rectangle.svg"/>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#demo-plebe-world').plebe();
+
+            $(window).on('resize', function() {
+                centerSettingsContainer();
+            });
+
+            $(document).ready(centerSettingsContainer());
+
+            function centerSettingsContainer() {
+                var settingsContainer = $('#demo-settings-container');
+                settingsContainer.css('margin-top', (window.innerHeight / 2) - (settingsContainer.height() / 2));
+                settingsContainer.css('margin-left', (window.innerWidth / 2) - (settingsContainer.width() / 2));
+            }
+
+            $('#demo-settings-container input').on('change', function() {
+                var settingId = this.id;
+                var value = this.value;
+                if ($(this).is(':checkbox')) {
+                    value = $(this).is(':checked');
+                }
+
+                $('#demo-plebe-world').attr(settingId, value);
+            });
+
+            $('#generate-btn').on('click', function() {
+                // Clear the world
+                $('#demo-plebe-world').html('<div class="plb-particle"> <img src="img/circle.svg"/> </div> ' +
+                    '<div class="plb-particle"> <img src="img/polygon.svg"/> </div> ' +
+                    '<div class="plb-particle"> <img src="img/rectangle.svg"/> </div>');
+
+                $('#demo-plebe-world').plebe();
+            });
+        </script>
+    </body>
+</html>

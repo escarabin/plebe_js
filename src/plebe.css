@@ -1,0 +1,53 @@
+.plb-world {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.plb-world .plb-particle, .plb-world .plb-layer {
+    position: absolute;
+}
+
+@keyframes plb-particle-animation {
+    0% {
+        margin-top: 0;
+        margin-left: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    25% {
+        margin-top: 200px;
+        margin-left: 200px;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+    }
+    50% {
+        margin-top: 0;
+        margin-left: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    75% {
+        margin-top: -200px;
+        margin-left: -200px;
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-120deg);
+    }
+    100% {
+        margin-top: 0;
+        margin-left: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+}
+
+.plb-world .plb-particle img.animated {
+    animation: plb-particle-animation 10s infinite;
+    -webkit-animation: plb-particle-animation 10s infinite;
+    -moz-animation: plb-particle-animation 10s infinite;
+}
