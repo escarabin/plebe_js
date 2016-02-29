@@ -8,6 +8,8 @@
 $('#my-plebe-world').plebe();
 ```
 
+Simply insert some image files into you plebe-world div. You can pass parameters to your world.
+
 ``` html
 <div class="plb-world"
      id="my-plebe-world"
